@@ -1,0 +1,21 @@
+<script>
+    function ConfirmDelete()
+    {
+      return confirm("Are you sure you want to delete this post?");
+    }
+    </script>
+
+<h1>You are editing blog with title: '<%=blog.title%>'</h1>
+<p><a href="/">Show all Blogs</a></p>
+<form action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
+    <input type="text" name="blog[title]" value="<%=blog.title%>">
+    <input type="text" name="blog[image]" value="<%=blog.image%>">
+    <label>Your blog content goes here:
+    <textarea name="blog[body]" rows="20" cols="30" name="content"><%=blog.body%></textarea>
+    </label>
+    <input type=submit>
+</form>
+<form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+    <button Onclick="return ConfirmDelete()" 
+    >Delete this post</button>
+</form>

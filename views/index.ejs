@@ -1,0 +1,13 @@
+<h1>About Labrador Dogs</h1>
+
+<ol>
+        <% blogs.forEach(function(blog){ %>
+        <li>
+        <strong><%=blog.title%></strong> - Created on: <%= blog.created %>
+        <p><%=blog.body.substring(0,75)%>...
+        <a href="/blogs/<%=blog._id%>">Read more</a></p>
+        </li>
+    <% }); %>
+</ol>
+
+<p><a href="/blogs/new">Create new blog</a></p>
